@@ -11,14 +11,14 @@ populateCategories();
 renderProducts();
 
 // 加载商品数据
-fetch('./products.json')
-  .then(res => res.json())
-  .then(data => {
-    products = data;
-    filteredProducts = products;
-    populateCategories();
-    renderProducts();
-  });
+//fetch('./products.json')
+//  .then(res => res.json())
+//  .then(data => {
+//    products = data;
+//    filteredProducts = products;
+//    populateCategories();
+//    renderProducts();
+//  });
 
 function populateCategories() {
   const categorySelect = document.getElementById('category');
@@ -89,6 +89,7 @@ closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
 modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 });
+
 
 
 
