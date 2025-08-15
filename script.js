@@ -11,7 +11,6 @@ fetch('products.json')
     renderProducts();
   });
 
-// 填充分类下拉菜单
 function populateCategories() {
   const categorySelect = document.getElementById('category');
   const categories = ['all', ...new Set(products.map(p => p.category))];
@@ -23,7 +22,6 @@ function populateCategories() {
   });
 }
 
-// 渲染商品
 function renderProducts() {
   const grid = document.getElementById('productGrid');
   grid.innerHTML = '';
@@ -36,6 +34,10 @@ function renderProducts() {
       <div class="price">￥${p.price}</div>
       <p>${p.description}</p>
     `;
+
+    // 点击商品卡片显示详情
+    card.addEventListener('click', () => openModal(p));
+
     grid.appendChild(card);
   });
 }
@@ -52,7 +54,6 @@ document.getElementById('category').addEventListener('change', function(e) {
   filterProducts(document.getElementById('search').value.toLowerCase(), category);
 });
 
-// 筛选逻辑
 function filterProducts(keyword, category) {
   filteredProducts = products.filter(p => {
     const matchCategory = category === 'all' || p.category === category;
@@ -61,3 +62,21 @@ function filterProducts(keyword, category) {
   });
   renderProducts();
 }
+
+// 弹窗逻辑
+const modal = document.getElementById('productModal');
+const closeModalBtn = document.getElementById('closeModal');
+
+function openModal(product) {
+  document.getElementById('modalImage').src = product.image;
+  document.getElementById('modalName').textContent = product.name;
+  document.getElementById('modalPrice').textContent = `￥${product.price}`;
+  document.getElementById('modalDescription').textContent = product.description;
+  modal.style.display = 'flex';
+}
+
+// 关闭弹窗
+closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) modal.style.display = 'none';
+});
