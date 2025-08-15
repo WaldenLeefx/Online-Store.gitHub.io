@@ -1,5 +1,13 @@
-let products = [];
-let filteredProducts = [];
+//let products = [];
+//let filteredProducts = [];
+let products = [
+  { id: 1, name: "商品1", price: 99, category: "数码", image: "https://via.placeholder.com/200", description: "描述" },
+  { id: 2, name: "商品2", price: 199, category: "服装", image: "https://via.placeholder.com/200", description: "描述" }
+];
+let filteredProducts = products;
+
+populateCategories();
+renderProducts();
 
 // 加载商品数据
 fetch('./products.json')
@@ -80,4 +88,5 @@ closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
 modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 });
+
 
