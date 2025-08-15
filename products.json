@@ -4,7 +4,7 @@
     "name": "商品名称1",
     "price": 99,
     "category": "数码",
-    "image": "https://via.placeholder.com/200",
+    "image": "images/example.jpg",
     "description": "简短描述文字"
   },
   {
@@ -12,7 +12,7 @@
     "name": "商品名称2",
     "price": 199,
     "category": "服装",
-    "image": "https://via.placeholder.com/200",
+    "image": "images/example.jpg",
     "description": "简短描述文字"
   },
   {
@@ -20,7 +20,8 @@
     "name": "商品名称3",
     "price": 299,
     "category": "数码",
-    "image": "https://via.placeholder.com/200",
+    "image": "images/example.jpg",
     "description": "简短描述文字"
   }
 ]
+
