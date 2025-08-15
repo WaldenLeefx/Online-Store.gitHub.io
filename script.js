@@ -2,7 +2,7 @@ let products = [];
 let filteredProducts = [];
 
 // 加载商品数据
-fetch('products.json')
+fetch('./products.json')
   .then(res => res.json())
   .then(data => {
     products = data;
@@ -80,3 +80,4 @@ closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
 modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 });
+
