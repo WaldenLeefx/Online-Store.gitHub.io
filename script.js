@@ -1,8 +1,9 @@
 //let products = [];
 //let filteredProducts = [];
 let products = [
-  { id: 1, name: "商品1", price: 99, category: "数码", image: "https://via.placeholder.com/200", description: "描述" },
-  { id: 2, name: "商品2", price: 199, category: "服装", image: "https://via.placeholder.com/200", description: "描述" }
+  { id: 1, name: "商品1", price: 99, category: "数码", image: "iamges/example.png", description: "描述" },
+  { id: 2, name: "商品2", price: 199, category: "服装", image: "iamges/example.png", description: "描述" },
+  { id: 3, name: "商品3", price: 299, category: "烟酒", image: "iamges/example.png", description: "描述" }
 ];
 let filteredProducts = products;
 
@@ -88,5 +89,6 @@ closeModalBtn.addEventListener('click', () => modal.style.display = 'none');
 modal.addEventListener('click', (e) => {
   if (e.target === modal) modal.style.display = 'none';
 });
+
 
 
